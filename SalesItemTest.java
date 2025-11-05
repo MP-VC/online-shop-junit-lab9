@@ -47,6 +47,8 @@ public class SalesItemTest
         SalesItem salesIte1 = new SalesItem("Brain surgery for Dummies", 21998);
         assertEquals(true, salesIte1.addComment("James Duckling", "This book is great. I perform brain surgery every week now.", 4));
         assertEquals(1, salesIte1.getNumberOfComments());
+        assertEquals(true, salesIte1.addComment("A","A",1));
+        assertEquals(false,salesIte1.addComment("A","A",1));
     }
 
     /**
@@ -57,6 +59,7 @@ public class SalesItemTest
     {
         SalesItem salesIte1 = new SalesItem("Java For Complete Idiots, Vol 2", 19900);
         assertEquals(false, salesIte1.addComment("Joshua Black", "Not worth the money. The font is too small.", -5));
+        assertEquals(true, salesIte1.addComment("A","A",7));
     }
 
     /**
