@@ -39,4 +39,12 @@ public class CommentTest
     public void tearDown()
     {
     }
+    
+    @Test
+    public void authorTest()
+    {
+        Comment commen1 = new Comment("A","A",11);
+        commen1.upvote();
+        assertEquals(1,commen1.getVoteCount());
+    }
 }

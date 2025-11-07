@@ -72,4 +72,22 @@ public class SalesItemTest
         assertEquals("test name", salesIte1.getName());
         assertEquals(1000, salesIte1.getPrice());
     }
+    
+    @Test
+    public void testMostHelpfulComment()
+    {
+        SalesItem Zamboni = new SalesItem("test name", 1000);
+        Zamboni.addComment("Joshua Black","A",1);
+        Zamboni.upvoteComment(1);
+        Zamboni.addComment("Jack Black","A",1);
+        Zamboni.downvoteComment(2);
+        Comment  mostheap = Zamboni.findMostHelpfulComment();
+        assertEquals(mostheap, Zamboni.findMostHelpfulComment());
+    }
+    @Test
+    public void sfalse()
+    {
+        SalesItem salesIte1 = new SalesItem("test name", 1000);
+        assertEquals(false, salesIte1.addComment("A","A",-1));
+    }
 }
